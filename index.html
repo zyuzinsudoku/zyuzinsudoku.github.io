@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D65B7WXQ1Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D65B7WXQ1Y');
+</script>
+
+<!-- zyuzin !!!!! counter from clarity.microsoft.com -->
+  <meta charset="UTF-8">
+  <meta name="description" content="Online Sudoku generator and solver with adjustable difficulty, custom puzzle entry, and instant solutions. Unlimited puzzles and endless challenges.">
+  <meta name="keywords" content="sudoku, sudoku generator, sudoku solver, online sudoku, sudoku puzzle">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Mikhail Zyuzin">
+<!-- <title>Zyuzin Sudoku - Online Sudoku Generator and Solver</title> -->
+  <title>Zyuzin Sudoku by Mikhail Zyuzin - Online Sudoku Generator and Solver</title>
+
+  <link rel="stylesheet" href="ZyuzinStyle.css">
+
+<!--
+<script data-goatcounter="https://zyuzin.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+-->
+
+<script data-goatcounter="https://zyuzinnetlify.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x8ys8h2izf");
+</script>
+
+</head>
+
+<body>
+
+<p class="seo-text">
+Zyuzin Sudoku is a free online Sudoku generator and solver created by Mikhail Zyuzin.
+Generate unlimited Sudoku puzzles with adjustable difficulty levels, enter your own Sudoku boards,
+and instantly solve any valid Sudoku puzzle. Enjoy endless Sudoku challenges online.
+</p>
+
+<a href="ZyuzinResume.html"><img src="ZyuzinLogo.gif" alt="Mikhail Zyuzin Resume"></a>
+
+    <h1>Zyuzin Sudoku - Online Sudoku Generator and Solver</h1>
+    <h3>Unlimited Puzzles • Endless Challenge</h3>
+
+<table class="main-table">
+  <tr>
+    <td>
+
+<table class="menu-table">
+ <tr>
+ <td>
+<button type="button" class="btn-primary" onclick="GenerateSudoku()">Generate Sudoku</button>
+<button type="button" class="btn-primary" onclick="ClearSudoku()">Clear Sudoku</button>
+
+<label style="color: blue; font-size: 12px;">Empty Cells:</label>
+<select name="emptycells" id="emptycells">
+  <option value="10">10</option>
+  <option value="20">20</option>
+  <option value="30">30</option>
+  <option value="40">40</option>
+  <option value="50">50</option>
+  <option value="60">60</option>
+  <option value="70">70</option>
+</select>
+
+<!-- zyuzin !!!!! not needed
+<label style="color: blue; font-size: 12px;">Skew:</label>
+<select name="skew" id="skew">
+  <option value="0">0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+-->
+
+</td>
+</tr>
+</table> <!-- menu-table -->
+
+<table class="child-table" style="table-layout: fixed; border: 3px solid black; width: 400px; height: 400px;" border="1";>
+
+  <tr>
+    <td><input type="text" class="txt_main" id="a00" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a01" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a02" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a03" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a04" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a05" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a06" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a07" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a08" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+  </tr>
+
+  <tr>
+    <td><input type="text" class="txt_main" id="a10" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a11" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a12" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a13" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a14" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a15" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a16" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a17" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a18" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+  </tr>
+  <tr>
+    <td><input type="text" class="txt_main" id="a20" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a21" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a22" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a23" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a24" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a25" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a26" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a27" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a28" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+  </tr>
+  <tr>
+    <td><input type="text" class="txt_main" id="a30" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a31" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a32" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a33" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a34" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a35" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a36" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a37" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a38" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+  </tr>
+  <tr>
+    <td><input type="text" class="txt_main" id="a40" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a41" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a42" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a43" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a44" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a45" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a46" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a47" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a48" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+  </tr>
+  <tr>
+    <td><input type="text" class="txt_main" id="a50" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a51" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a52" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a53" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a54" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a55" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a56" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a57" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a58" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+  </tr>
+  <tr>
+    <td><input type="text" class="txt_main" id="a60" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a61" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a62" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a63" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a64" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a65" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a66" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a67" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a68" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+  </tr>
+  <tr>
+    <td><input type="text" class="txt_main" id="a70" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a71" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a72" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a73" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a74" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a75" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a76" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a77" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a78" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+  </tr>
+  <tr>
+    <td><input type="text" class="txt_main" id="a80" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a81" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a82" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a83" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a84" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a85" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a86" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a87" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+    <td><input type="text" class="txt_main" id="a88" inputmode="numeric" pattern="[1-9]" oninput="this.value = this.value.replace(/[^1-9]/g, '')"></td>
+  </tr>
+
+</table> <!-- child-table -->
+
+    </td>
+    <td>
+
+<table class="menu-table">
+<tr>
+<td>
+<button type="button" class="btn-primary" onclick="SolveSudokuZyuzin()">Solve Sudoku</button>
+<button type="button" class="btn-primary" onclick="ClearSolution()">Clear Solution</button>
+</tr>
+</td>
+</table> <!-- menu-table -->
+
+<table class="child-table" style="table-layout: fixed; border: 3px solid black; width: 400px; height: 400px;" border="1";>
+
+  <tr>
+    <td id="b00"></td>
+    <td id="b01"></td>
+    <td id="b02"></td>
+    <td id="b03"></td>
+    <td id="b04"></td>
+    <td id="b05"></td>
+    <td id="b06"></td>
+    <td id="b07"></td>
+    <td id="b08"></td>
+  </tr>
+  <tr>
+    <td id="b10"></td>
+    <td id="b11"></td>
+    <td id="b12"></td>
+    <td id="b13"></td>
+    <td id="b14"></td>
+    <td id="b15"></td>
+    <td id="b16"></td>
+    <td id="b17"></td>
+    <td id="b18"></td>
+  </tr>
+  <tr>
+    <td id="b20"></td>
+    <td id="b21"></td>
+    <td id="b22"></td>
+    <td id="b23"></td>
+    <td id="b24"></td>
+    <td id="b25"></td>
+    <td id="b26"></td>
+    <td id="b27"></td>
+    <td id="b28"></td>
+  </tr>
+  <tr>
+    <td id="b30"></td>
+    <td id="b31"></td>
+    <td id="b32"></td>
+    <td id="b33"></td>
+    <td id="b34"></td>
+    <td id="b35"></td>
+    <td id="b36"></td>
+    <td id="b37"></td>
+    <td id="b38"></td>
+  </tr>
+  <tr>
+    <td id="b40"></td>
+    <td id="b41"></td>
+    <td id="b42"></td>
+    <td id="b43"></td>
+    <td id="b44"></td>
+    <td id="b45"></td>
+    <td id="b46"></td>
+    <td id="b47"></td>
+    <td id="b48"></td>
+  </tr>
+  <tr>
+    <td id="b50"></td>
+    <td id="b51"></td>
+    <td id="b52"></td>
+    <td id="b53"></td>
+    <td id="b54"></td>
+    <td id="b55"></td>
+    <td id="b56"></td>
+    <td id="b57"></td>
+    <td id="b58"></td>
+  </tr>
+  <tr>
+    <td id="b60"></td>
+    <td id="b61"></td>
+    <td id="b62"></td>
+    <td id="b63"></td>
+    <td id="b64"></td>
+    <td id="b65"></td>
+    <td id="b66"></td>
+    <td id="b67"></td>
+    <td id="b68"></td>
+  </tr>
+  <tr>
+    <td id="b70"></td>
+    <td id="b71"></td>
+    <td id="b72"></td>
+    <td id="b73"></td>
+    <td id="b74"></td>
+    <td id="b75"></td>
+    <td id="b76"></td>
+    <td id="b77"></td>
+    <td id="b78"></td>
+  </tr>
+  <tr>
+    <td id="b80"></td>
+    <td id="b81"></td>
+    <td id="b82"></td>
+    <td id="b83"></td>
+    <td id="b84"></td>
+    <td id="b85"></td>
+    <td id="b86"></td>
+    <td id="b87"></td>
+    <td id="b88"></td>
+  </tr>
+</table> <!-- child-table -->
+
+    </td>
+  </tr>
+</table> <!-- main-table -->
+
+<footer>
+<!--
+    <a href="ZyuzinResume.html">© 2026 Mikhail Zyuzin</a>
+<br>
+    Contact: mvzyuzin@yahoo.com
+-->
+    <a href="ZyuzinResume.html">© 2026 Mikhail Zyuzin</a><br>
+    Sudoku Generator and Solver by Mikhail Zyuzin<br>
+    Contact: mvzyuzin@yahoo.com
+</footer>
+
+<!-- zyuzin: uncomment to test
+<button type="button" class="btn-primary" onclick="Test()">Test</button>
+<td><input type="text" class="txt-test" id="TestAutomated"></td>
+<td><input type="text" class="txt-test" id="TestManual"></td>
+-->
+
+<!-- it works only locally
+<p>Visits: <span id="count"></span></p>
+<script>
+let count = localStorage.getItem('visitCount') || 0;
+count++;
+localStorage.setItem('visitCount', count);
+document.getElementById('count').textContent = count;
+</script>
+-->
+
+<script src="ZyuzinJavaScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zyuzintechnologies.netlify.app/sitemap.xml

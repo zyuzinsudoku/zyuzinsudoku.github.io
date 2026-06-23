@@ -1,0 +1,140 @@
+.seo-text {
+  font-size: 16px;
+  color: #666666;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  color: #2020BB;
+  margin-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 18px;
+  color: #404040;
+  margin-top: 1;
+  margin-bottom: 1;
+}
+
+h3 {
+  text-align: center;
+  font-size: 18px;
+  color: #6432FF;
+  font-weight: normal;
+  margin-top: 1;
+}
+
+label {
+  margin-left: 10px; /* Pushes the label 10px to the right */
+  color: blue;
+}
+
+.btn-primary {
+  background-color: #3232FF; /* Blue background */
+  color: white;              /* White text */
+  padding: 5px 10px;         /* Space around text */
+  border: none;              /* Remove default border */
+  border-radius: 5px;        /* Rounded corners */
+  cursor: pointer;           /* Hand cursor on hover */
+  font-size: 12px;
+  transition: 0.3s;          /* Smooth transition for effects */
+}
+
+/* Hover state */
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.btn-test {
+  background-color: green; /* Blue background */
+  color: white;              /* White text */
+  padding: 5px 10px;         /* Space around text */
+  border: none;              /* Remove default border */
+  border-radius: 5px;        /* Rounded corners */
+  cursor: pointer;           /* Hand cursor on hover */
+  font-size: 12px;
+  transition: 0.3s;          /* Smooth transition for effects */
+}
+
+/* Hover state */
+.btn-test:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+table {
+  border-collapse: collapse; /* Merges double borders into one line */
+  border: none; /* Removes the border entirely */
+}
+
+.main-table {
+  margin-left: auto;
+  margin-right: auto;
+  border-color: black;
+}
+
+.main-table th, .main-table td {
+    border-color: white
+}
+
+.menu-table th, .menu-table td {
+    border-color: white;
+}
+
+.child-table {
+    border-color: black;
+}
+
+.child-table th, .child-table td {
+    border-color: grey;
+}
+
+th, td {
+  border: 1px solid black; /* Applies the single line border */
+  padding: 8px;           /* Adds space inside the cells */
+  color: #646464;
+  font-size: 22px;
+  font-weight: bold; 
+  text-align: center;
+}
+
+td:nth-child(3n) { border-right: 3px solid black; }
+tr:nth-child(3n) td { border-bottom: 3px solid black; }
+
+td:empty::after {
+  content: "\00a0"; /* Non-breaking space */
+  visibility: hidden;
+}
+
+input[type="text"] {
+  text-align: center;
+}
+
+.txt_main {
+  border: none; /*Removes the default static border */
+  outline: none; /* Removes the highlight/border when clicked (focus) */
+  width: 1ch;
+  color: #323232;
+  font-size: 20px;
+  font-weight: bold; 
+  text-align: center;
+}
+
+.txt-test {
+  color: red;
+  font-size: 12px;
+}
+
+input[type="number"] {
+  width: 1ch;
+  border: none; /*Removes the default static border */
+}
+
+footer {
+  background-color: white;
+  color: #6400ff;
+/* padding: 20px; */
+}

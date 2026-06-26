@@ -5,6 +5,10 @@
   line-height: 1.4;
 }
 
+.title {
+    margin: 0;                /* Removes default browser spacing */
+    margin-top: 0px;
+}
 
 .header {
     display: flex;
@@ -15,22 +19,20 @@
 
 .logo {
     position: absolute;
-    top: 5px;
-    left: 80px;               /* Distance from the left edge */
+    left: 20px;               /* Distance from the left edge */
     height: 70px;             /* Adjust as desired */
 }
 
-/*
 .header h1 {
     margin: 0;
 }
-*/
+
 
 h1 {
   text-align: center;
   font-size: 30px;
   color: #2020BB;
-  margin-bottom: 1px;
+  margin-bottom: 10px;
 }
 
 h2 {
@@ -96,7 +98,6 @@ table {
   padding: 5px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
 }
 
 .link-table th, .link-table td {
@@ -169,6 +170,5 @@ input[type="number"] {
 footer {
   background-color: white;
   color: #6400ff;
-/*  */
-  padding: 10px;
+/* padding: 20px; */
 }

@@ -5,11 +5,32 @@
   line-height: 1.4;
 }
 
+
+.header {
+    display: flex;
+    align-items: center;      /* Vertically center logo and title */
+    justify-content: center;  /* Center the whole header */
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 80px;               /* Distance from the left edge */
+    height: 70px;             /* Adjust as desired */
+}
+
+/*
+.header h1 {
+    margin: 0;
+}
+*/
+
 h1 {
   text-align: center;
   font-size: 30px;
   color: #2020BB;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
 }
 
 h2 {
@@ -75,6 +96,7 @@ table {
   padding: 5px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
 }
 
 .link-table th, .link-table td {
@@ -139,11 +161,6 @@ input[type="text"] {
   text-align: center;
 }
 
-.txt-test {
-  color: red;
-  font-size: 12px;
-}
-
 input[type="number"] {
   width: 1ch;
   border: none; /*Removes the default static border */
@@ -152,5 +169,6 @@ input[type="number"] {
 footer {
   background-color: white;
   color: #6400ff;
-/* padding: 20px; */
+/*  */
+  padding: 10px;
 }

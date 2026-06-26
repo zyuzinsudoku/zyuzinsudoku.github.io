@@ -70,6 +70,18 @@ table {
   border: none; /* Removes the border entirely */
 }
 
+.link-table {
+  border: none;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link-table th, .link-table td {
+  border: none;
+  padding: 5px;
+}
+
 .main-table {
   margin-left: auto;
   margin-right: auto;
@@ -101,8 +113,8 @@ th, td {
   text-align: center;
 }
 
-td:nth-child(3n) { border-right: 3px solid black; }
-tr:nth-child(3n) td { border-bottom: 3px solid black; }
+.child-table td:nth-child(3n) { border-right: 3px solid black; }
+.child-table tr:nth-child(3n) td { border-bottom: 3px solid black; }
 
 td:empty::after {
   content: "\00a0"; /* Non-breaking space */
